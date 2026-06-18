@@ -8,10 +8,10 @@ const Register = () => {
           TaskFlow
         </h1>
         <p className="text-center text-gray-500 mb-6">
-          Creat your account
+          Create your account
         </p>
 
-        <form className="text-center text-gray-500 mb-6">
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">
               Full Name
