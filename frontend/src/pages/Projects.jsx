@@ -1,7 +1,9 @@
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
-  const Projects =[
+  const navigate = useNavigate();
+  const projects =[
     {
       id: 1,
       title: "TaskFlow",
@@ -34,7 +36,27 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+          {projects.map((project) => (
+            <div
+            key={project.id}
+            className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+            >
+              <h2 className="text-xl font-semibold mb-2">
+                {project.title}
+              </h2>
+              <p className="text-gray-600 mb-4">
+                {project.description}
+              </p>
+              <p className="text-sm text-gray-500 mb-4">
+                Tasks: {project.tasks}
+              </p>
+              <button onClick={() => navigate(`/projects/${project.id}`)}
+               className="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-800"  
+              >
+                View Project
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </Layout>
