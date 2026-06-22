@@ -1,29 +1,47 @@
-import Layout from "../components/Layout"
+import Layout from "../components/Layout";
+import {useState} from "react";
 
 const ProjectDetails = () => {
-  const todoTasks =[
+  const [showModal, setShowModal] = useState(false);
+
+  const [tasks, setTasks] =useState([
     {
       id: 1, 
-      title: "Design Lofin Page"
+      title: "Design Lofin Page",
+      status: "todo",
     },
     {
       id:2,
-      title: "Setup MangoDB"
-    }
-  ];
-  const inProgressTasks = [
+      title: "Setup MangoDB",
+      status: "todo",
+    },
     {
       id: 3,
-    title: "Build Dashboard UI"
-    }
-  ];
-  const completedTasks = [
+      title: "Build Dashboard UI",
+      status: "inprogress",
+    },
     {
       id:4,
-      title: "Create Project Structure"
+      title: "Create Project Structure",
+      status: "done",
     }
-  ];
+  ])
 
+  const[taskTitle, setTaskTitle] = useState("");
+  const handleAddTask =() =>{
+    if(!taskTitle){
+      alert("Please enter task title");
+      return;
+    }
+    const newTask ={
+      id: tasks.length +1,
+      title: taskTitle,
+      status: "todo",
+    }
+    setTasks([...tasks, newTask]);
+    setTaskTitle("");
+    setShowModal(false);
+  }
   return (
     <Layout>
       <div>
