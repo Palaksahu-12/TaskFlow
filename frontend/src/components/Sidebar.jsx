@@ -10,17 +10,17 @@ const Sidebar = () =>{
     ];
 
     return(
-        <div className="w-64 h-screen bg-slate-900 text-white p-5">
-            <h1 className="text-2xl font-bold mb-8">
+        <aside className="w-64 min-h-screen bg-slate-900 text-white p-5">
+            <h1 className="text-2xl font-bold mb-10">
                 TaskFlow
             </h1>
 
             <nav>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                     {menuItems.map((item) =>(
                     <li key={item.path}>
                         <Link to={item.path}
-                        className={`block px-4 py-3 rounded-lg transition ${location.pathname === item.path ? "bg-blue-600":"hover:bg-slate-800"}`}>
+                        className={`block px-4 py-3 rounded-lg ${location.pathname === item.path ? "bg-blue-600":"hover:bg-slate-800"}`}>
                             {item.name}
                         </Link>
                     </li>
@@ -28,12 +28,10 @@ const Sidebar = () =>{
                 </ul>
             </nav>
 
-            <div className="absolute bottom-5 left-5">
-                <button className="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-600">
+            <button className="mt-10 w-full bg-red-500 py-2 rounded-lg hover:bg-red-600">
                     Logout
-                </button>
-            </div>
-        </div>
+            </button>
+        </aside>
     )
 };
 

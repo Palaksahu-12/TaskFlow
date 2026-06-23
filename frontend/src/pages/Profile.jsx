@@ -8,12 +8,12 @@ const Profile = () => {
           
           <div className="flex flex-col items-center">
             <img
-            src="https://i.pravatar.cc/150?img=3"
+            src="https://i.pravatar.cc/40"
             alt="Profile"
             className="w-32 h-32 rounded-full border-4 border-blue-500"
             />
             <h1 className="text-3xl font-bold mt-4 text-slate-800">
-              Palak Sahu
+              John Doe
             </h1>
             <p className="text-gray-500">
               Software Developer
@@ -26,7 +26,7 @@ const Profile = () => {
                 Full Name
               </label>
               <p className="bg-slate-100 p-3 rounded-lg">
-                Palak Sahu
+               John Doe
               </p>
             </div>
 
@@ -35,7 +35,7 @@ const Profile = () => {
                 Email
               </label>
               <p className="bg-slate-100 p-3 rounded-lg">
-                palaksahu@example.com
+                johndoe@example.com
               </p>
             </div>
 
