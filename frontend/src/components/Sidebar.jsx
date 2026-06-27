@@ -10,8 +10,8 @@ const Sidebar = () =>{
     ];
 
     return(
-        <aside className="w-64 min-h-screen bg-slate-900 text-white p-5">
-            <h1 className="text-2xl font-bold mb-10">
+        <aside className="w-64 min-h-screen bg-slate-900 text-white p-6">
+            <h1 className="text-3xl font-bold mb-12">
                 TaskFlow
             </h1>
 
@@ -20,7 +20,7 @@ const Sidebar = () =>{
                     {menuItems.map((item) =>(
                     <li key={item.path}>
                         <Link to={item.path}
-                        className={`block px-4 py-3 rounded-lg ${location.pathname === item.path ? "bg-blue-600":"hover:bg-slate-800"}`}>
+                        className={`block px-4 py-3 rounded-xl transition ${location.pathname === item.path ? "bg-blue-600":"hover:bg-slate-800"}`}>
                             {item.name}
                         </Link>
                     </li>
@@ -28,7 +28,7 @@ const Sidebar = () =>{
                 </ul>
             </nav>
 
-            <button className="mt-10 w-full bg-red-500 py-2 rounded-lg hover:bg-red-600">
+            <button className="mt-10 w-full bg-red-500 py-3 rounded-xl hover:bg-red-600 transition">
                     Logout
             </button>
         </aside>
